@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinh trắc vân tay Youscan</title>
+    
+    <style>
+        body {
+            font-size: 15px;
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+        header {
+            text-align: center;
+            border-bottom: 2px solid #ccc; /* Đường kẻ ngang phía dưới */
+            padding-bottom: 10px; /* Khoảng cách giữa đường kẻ và nội dung dưới header */
+        }
+        .container {
+            display: flex;
+          }
+        
+          .left-side {
+            flex: 1;
+            padding: 20px;
+            background-color: #f0f0f0;
+          }
+        
+          .right-side {
+            flex: 1;
+            padding: 20px;
+            background-color: #f0f0f0;
+          }
+          .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f0f0f0;
+            color: black;
+          }
+          .linhvuc-left {
+            flex: 1;
+            background-color: #f0f0f0;
+        }
+        .linhvuc-right{
+            flex: 1;
+        }
+        .contain{
+            display: flex;
+            flex-direction: row;
+            
+        }
+        nav {
+            background-color: #444;
+            padding: 10px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav li {
+            margin: 0 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: orange; 
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+    <h2 style="text-align: center;">Youscan - Báo cáo Tóm tắt - TRẺ EM</h2>
+    <nav>
+        <ul>
+            <li><a href="#">TRANG CHỦ</a></li>
+            <li><a href="/">BÁO CÁO TRẺ EM</a></li>
+            <li><a href="/adult">BÁO CÁO NGƯỜI LỚN</a></li>
+            <li><a href="#">BÁO LỖI WEBSITE</a></li>
+        </ul>
+    </nav>
+    </header>
+    <br><br>
+    <div class="space">
+    <form method="POST" action="/">
+        <div class=container>
+            <div class="left-side">
+        <label for="name">Chuyên viên tư vấn: </label> &nbsp;&nbsp;&nbsp;
+        <input type="text" id="nameCVTV" name="CVTV" required><br><br>
+        <label for="name">Tên phụ huynh: </label> &emsp;&emsp;&nbsp;&nbsp;
+        <input type="text" id="name" name="name1" required><br><br>
+        <label for="name">Người được phân tích: </label>
+        <input type="text" id="name" name="name2" required><br><br>
+        <label for="phone">Số điện thoại: </label> &emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" id="phone2numeric" name="phone" required><br><br>
+        <br><br>
+        <label for="strain">Chủng vân tay: </label>
+        <select id="strain" name="strain">
+            <option value="at-ul">AT-UL</option>
+            <option value="ar-ul">AR-UL</option>
+            <option value="rl-ul">RL-UL</option>
+            <option value="rl-wc">RL-WC</option>
+            <option value="rl-wc-wp">RL-WC-WP</option>
+            <option value="rl-ws">RL-WS</option>
+            <option value="ul">UL</option>
+            <option value="wc-at">WC-AT</option>
+            <option value="wc-ul">WC-UL</option>
+            <option value="wp-at">WP-AT</option>
+            <option value="wp-ul">WP-UL</option>
+            <option value="wp-wc">WP-WC</option>
+            <option value="wp-ws">WP-WS</option>
+            <option value="ws-at">WS-AT</option>
+            <option value="ws-ul">WS-UL</option>
+            <option value="ws-wc">WS-WC</option>
+            <option value="ws">WS</option>
+        </select>
+        <br><br>
+        <label for="age">Độ tuổi: </label> &emsp;&emsp;&nbsp;&nbsp;
+        <select id="age" name="age">
+            <option value="dotuoi1">0 - 6 tuổi</option>
+            <option value="dotuoi2">7 - 14 tuổi</option>
+        </select>
+        <br><br>
+        <label for="tfrc">Chỉ số TFRC: </label> &nbsp; 
+        <input type="number" id="tfrc" name="tfrc" step="0.001" required> &nbsp;
+        <br><br>
+        <label for="tfrcLH">Mức độ TFRC: </label> &nbsp;&nbsp;
+        <select id="tfrcLH" name="tfrcLH">
+            <option value="veryhigh">Rất Cao</option>
+            <option value="high">Cao</option>
+            <option value="good">Khá</option>
+            <option value="med">Trung bình</option>
+            <option value="medArch">Trung bình có Arch</option>
+        </select>
+        <br><br>
+            </div>
+        <div class="right-side">
+        <label for="tiemnang1">Tiềm năng(Vùng chức năng) 1: </label> &nbsp;&nbsp;
+        <select id="tiemnang1" name="tiemnang1">
+            <option value="none1"></option>
+            <option value="quanly">Quản lý</option>
+            <option value="lanhdao">Lãnh đạo</option>
+            <option value="logic">Logic</option>
+            <option value="tuongtuong">Tưởng tượng</option>
+            <option value="vandongtinh">Vận động tinh</option>
+            <option value="vandongtho">Vận động thô</option>
+            <option value="ngonngu">Ngôn ngữ</option>
+            <option value="amthanh">Âm thanh</option>
+            <option value="quansat">Quan sát</option>
+            <option value="thammy">Thẩm mỹ</option>
+        </select>
+        <br><br>
+        <label for="tiemnang2">Tiềm năng(Vùng chức năng) 2: </label> &nbsp;&nbsp;
+        <select id="tiemnang2" name="tiemnang2">
+            <option value="none1"></option>
+            <option value="quanly">Quản lý</option>
+            <option value="lanhdao">Lãnh đạo</option>
+            <option value="logic">Logic</option>
+            <option value="tuongtuong">Tưởng tượng</option>
+            <option value="vandongtinh">Vận động tinh</option>
+            <option value="vandongtho">Vận động thô</option>
+            <option value="ngonngu">Ngôn ngữ</option>
+            <option value="amthanh">Âm thanh</option>
+            <option value="quansat">Quan sát</option>
+            <option value="thammy">Thẩm mỹ</option>
+        </select>
+        <br><br>
+        <label for="tiemnang3">Tiềm năng(Vùng chức năng) 3: </label> &nbsp;&nbsp;
+        <select id="tiemnang3" name="tiemnang3">
+            <option value="none1"></option>
+            <option value="quanly">Quản lý</option>
+            <option value="lanhdao">Lãnh đạo</option>
+            <option value="logic">Logic</option>
+            <option value="tuongtuong">Tưởng tượng</option>
+            <option value="vandongtinh">Vận động tinh</option>
+            <option value="vandongtho">Vận động thô</option>
+            <option value="ngonngu">Ngôn ngữ</option>
+            <option value="amthanh">Âm thanh</option>
+            <option value="quansat">Quan sát</option>
+            <option value="thammy">Thẩm mỹ</option>
+        </select>
+        <br><br>
+        <label for="tiemnang4">Tiềm năng(Vùng chức năng) 4: </label> &nbsp;&nbsp;
+        <select id="tiemnang4" name="tiemnang4">
+            <option value="none1"></option>
+            <option value="quanly">Quản lý</option>
+            <option value="lanhdao">Lãnh đạo</option>
+            <option value="logic">Logic</option>
+            <option value="tuongtuong">Tưởng tượng</option>
+            <option value="vandongtinh">Vận động tinh</option>
+            <option value="vandongtho">Vận động thô</option>
+            <option value="ngonngu">Ngôn ngữ</option>
+            <option value="amthanh">Âm thanh</option>
+            <option value="quansat">Quan sát</option>
+            <option value="thammy">Thẩm mỹ</option>
+        </select>
+        <br><br>
+        <hr>
+        <label for="tiemnang9">Tiềm năng(Vùng chức năng) 9: </label> &nbsp;&nbsp;
+        <select id="tiemnang9" name="tiemnang9">
+            <option value="none1"></option>
+            <option value="quanly">Quản lý</option>
+            <option value="lanhdao">Lãnh đạo</option>
+            <option value="logic">Logic</option>
+            <option value="tuongtuong">Tưởng tượng</option>
+            <option value="vandongtinh">Vận động tinh</option>
+            <option value="vandongtho">Vận động thô</option>
+            <option value="ngonngu">Ngôn ngữ</option>
+            <option value="amthanh">Âm thanh</option>
+            <option value="quansat">Quan sát</option>
+            <option value="thammy">Thẩm mỹ</option>
+        </select>
+        <br><br>
+        <label for="tiemnang10">Tiềm năng(Vùng chức năng) 10: </label> &nbsp;
+        <select id="tiemnang10" name="tiemnang10">
+            <option value="none1"></option>
+            <option value="quanly">Quản lý</option>
+            <option value="lanhdao">Lãnh đạo</option>
+            <option value="logic">Logic</option>
+            <option value="tuongtuong">Tưởng tượng</option>
+            <option value="vandongtinh">Vận động tinh</option>
+            <option value="vandongtho">Vận động thô</option>
+            <option value="ngonngu">Ngôn ngữ</option>
+            <option value="amthanh">Âm thanh</option>
+            <option value="quansat">Quan sát</option>
+            <option value="thammy">Thẩm mỹ</option>
+        </select>
+        <br><br>
+        <hr>
+        <label for="veaka">VAK: </label> &nbsp;
+        <select id="veaka" name="veaka">
+            <option value="none1"></option>
+            <option value="avk">A V K</option>
+            <option value="vak">V A K</option>
+            <option value="kva">K V A</option>
+            <option value="akv">A K V</option>
+            <option value="kav">K A V</option>
+            <option value="vka">V K A</option>
+        </select>
+        <br><br>
+        <hr>
+        <label for="ttmvt1">Trí thông minh vượt trội 1: </label> &nbsp;
+        <select id="ttmvt1" name="ttmvt1">
+            <option value="none1"></option>
+            <option value="languagex">Ngôn ngữ</option>
+            <option value="logicx">Logic</option>
+            <option value="khonggianx">Không gian - Quan sát</option>
+            <option value="vandongx">Vận động</option>
+            <option value="amnhacx">Âm nhạc</option>
+            <option value="noitamx">Nội tâm</option>
+            <option value="tuongtacx">Tương tác</option>
+            <option value="thiennhienx">Thiên nhiên</option>
+            <option value="hiensinhx">Hiện sinh</option>
+        </select>
+        <br><br>
+        <label for="ttmvt2">Trí thông minh vượt trội 2: </label> &nbsp;
+        <select id="ttmvt2" name="ttmvt2">
+            <option value="none1"></option>
+            <option value="languagex">Ngôn ngữ</option>
+            <option value="logicx">Logic</option>
+            <option value="khonggianx">Không gian - Quan sát</option>
+            <option value="vandongx">Vận động</option>
+            <option value="amnhacx">Âm nhạc</option>
+            <option value="noitamx">Nội tâm</option>
+            <option value="tuongtacx">Tương tác</option>
+            <option value="thiennhienx">Thiên nhiên</option>
+            <option value="hiensinhx">Hiện sinh</option>
+        </select>
+        <br><br>
+        <label for="ttmvt3">Trí thông minh vượt trội 3: </label> &nbsp;
+        <select id="ttmvt3" name="ttmvt3">
+            <option value="none1"></option>
+            <option value="languagex">Ngôn ngữ</option>
+            <option value="logicx">Logic</option>
+            <option value="khonggianx">Không gian - Quan sát</option>
+            <option value="vandongx">Vận động</option>
+            <option value="amnhacx">Âm nhạc</option>
+            <option value="noitamx">Nội tâm</option>
+            <option value="tuongtacx">Tương tác</option>
+            <option value="thiennhienx">Thiên nhiên</option>
+            <option value="hiensinhx">Hiện sinh</option>
+        </select>
+        <br><br>
+        <label for="ttmvt4">Trí thông minh vượt trội 4: </label> &nbsp;
+        <select id="ttmvt4" name="ttmvt4">
+            <option value="none1"></option>
+            <option value="languagex">Ngôn ngữ</option>
+            <option value="logicx">Logic</option>
+            <option value="khonggianx">Không gian - Quan sát</option>
+            <option value="vandongx">Vận động</option>
+            <option value="amnhacx">Âm nhạc</option>
+            <option value="noitamx">Nội tâm</option>
+            <option value="tuongtacx">Tương tác</option>
+            <option value="thiennhienx">Thiên nhiên</option>
+            <option value="hiensinhx">Hiện sinh</option>
+        </select>
+        <br><br>
+        <hr>
+        <h3>Khuyến nghị nghề nghiệp</h3>
+    <div class="contain">
+    <div class="linhvuc-left">
+        <br>
+        <label for="field1">Chính trị-Luật</label> &emsp;&emsp;&emsp;&emsp;&ensp;
+        <input type="number" name="field1" id="field1" min="0" max="19" value="0"><br><br>
+        
+        <label for="field2">Truyền thông</label> &emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;
+        <input type="number" name="field2" id="field2" min="0" max="19" value="0"><br><br>
+        
+        <label for="field3">Giáo dục</label> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
+        <input type="number" name="field3" id="field3" min="0" max="19" value="0"><br><br>
+        
+        <label for="field4">Quản trị-Điều hành</label> &emsp;&emsp;&nbsp;&nbsp;
+        <input type="hidden" value="0">
+        <input type="number" name="field4" id="field4" min="0" max="19" value="0"><br><br>
+        
+        <label for="field5">Tâm lý học</label> &emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;
+        <input type="hidden" value="0">
+        <input type="number" name="field5" id="field5" min="0" max="19" value="0"><br><br>
+
+        <label for="field6">Ngôn ngữ-Đối ngoại</label> &emsp;&nbsp;&nbsp;&nbsp;
+        <input type="hidden" value="0">
+        <input type="number" name="field6" id="field6" min="0" max="19" value="0"><br><br>
+
+        <label for="field7">Xã hội học</label> &emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;
+        <input type="hidden" value="0">
+        <input type="number" name="field7" id="field7" min="0" max="19" value="0"><br><br>
+
+        <label for="field8">Văn học-Sử học-Triết học</label>
+        <input type="hidden" value="0">
+        <input type="number" name="field8" id="field8" min="0" max="19" value="0"><br><br>
+
+        <label for="field9">Nghệ thuật-Giải trí</label> &emsp;&emsp;&nbsp;&nbsp;
+        <input type="hidden" value="0">
+        <input type="number" name="field9" id="field9" min="0" max="19" value="0"><br><br>
+
+        <label for="field10">Y khoa</label> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;
+        <input type="hidden" value="0">
+        <input type="number" name="field10" id="field10" min="0" max="19" value="0"><br><br>
+    </div>
+    <div class="linhvuc-right">
+        <br>
+        <label for="field11">Thiết kế</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="hidden" value="0">
+        <input type="number" name="field11" id="field11" min="0" max="19" value="0"><br><br>
+        
+        <label for="field12">Công nghệ thông tin</label>&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="hidden" value="0">
+        <input type="number" name="field12" id="field12" min="0" max="19" value="0"><br><br>
+        
+        <label for="field13">Kỹ sư</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&emsp;&nbsp;
+        <input type="hidden" value="0">
+        <input type="number" name="field13" id="field13" min="0" max="19" value="0"><br><br>
+        
+        <label for="field14">Tài chính-Kế toán</label>&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="hidden" value="0">
+        <input type="number" name="field14" id="field14" min="0" max="19" value="0"><br><br>
+        
+        <label for="field15">Khách sạn-Du lịch</label>&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="hidden" value="0">
+        <input type="number" name="field15" id="field15" min="0" max="19" value="0"><br><br>
+
+        <label for="field16">Kiến trúc</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;
+        <input type="hidden" value="0">
+        <input type="number" name="field16" id="field16" min="0" max="19" value="0"><br><br>
+
+        <label for="field17">Thể thao</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="hidden" value="0">
+        <input type="number" name="field17" id="field17" min="0" max="19" value="0"><br><br>
+
+        <label for="field18">Quân đội</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;
+        <input type="hidden" value="0">
+        <input type="number" name="field18" id="field18" min="0" max="19" value="0"><br><br>
+
+        <label for="field19">Kinh doanh bán hàng-Tiếp thị</label>&nbsp;&nbsp;
+        <input type="hidden" value="0">
+        <input type="number" name="field19" id="field19" min="0" max="19" value="0"><br><br>
+    </div>
+</div>
+    </div>
+</div>
+       <!-- <input type="number" id="age" name="age" required><br><br>-->
+       <label for="conversion_type">Chọn định dạng xuất: </label>
+        <select name="conversion_type">
+            <option value="pdf">PDF</option>
+            <option value="docx">DOCX</option>
+        </select>
+       <button type="submit" id="generate-btn">Generate and Download</button>
+    </form>
+</div>
+<br><br><br><br><br><br>
+<hr>
+<div class="footer">
+    &copy; 2023 Youscan x PythonKhongKhoc. All rights reserved.
+  </div>
+</body>
+</html>
